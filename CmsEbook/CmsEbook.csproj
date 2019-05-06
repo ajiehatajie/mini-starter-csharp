@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E0D9E625-10F8-441A-B6A3-212DFC3DD783}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CmsEbook</RootNamespace>
+    <AssemblyName>CmsEbook</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UpgradeBackupLocation />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="Telerik.Web.Design, Version=2019.1.215.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCAJAX\2019.1.215.45\Telerik.Web.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Web.Spreadsheet">
+      <HintPath>..\lib\RCAJAX\2019.1.215.45\AdditionalLibraries\Bin45\Telerik.Web.Spreadsheet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Web.UI">
+      <HintPath>..\lib\RCAJAX\2019.1.215.45\Telerik.Web.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins">
+      <HintPath>..\lib\RCAJAX\2019.1.215.45\Telerik.Web.UI.Skins.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core">
+      <HintPath>..\lib\RCAJAX\2019.1.215.45\AdditionalLibraries\Bin45\Telerik.Windows.Documents.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow">
+      <HintPath>..\lib\RCAJAX\2019.1.215.45\AdditionalLibraries\Bin45\Telerik.Windows.Documents.Flow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet">
+      <HintPath>..\lib\RCAJAX\2019.1.215.45\AdditionalLibraries\Bin45\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml">
+      <HintPath>..\lib\RCAJAX\2019.1.215.45\AdditionalLibraries\Bin45\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip">
+      <HintPath>..\lib\RCAJAX\2019.1.215.45\AdditionalLibraries\Bin45\Telerik.Windows.Zip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Auth\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Auth\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web.Master.cs">
+      <DependentUpon>Web.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web.Master.designer.cs">
+      <DependentUpon>Web.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\RadCaptcha\0.wav" />
+    <Content Include="App_Data\RadCaptcha\1.wav" />
+    <Content Include="App_Data\RadCaptcha\2.wav" />
+    <Content Include="App_Data\RadCaptcha\3.wav" />
+    <Content Include="App_Data\RadCaptcha\4.wav" />
+    <Content Include="App_Data\RadCaptcha\5.wav" />
+    <Content Include="App_Data\RadCaptcha\6.wav" />
+    <Content Include="App_Data\RadCaptcha\7.wav" />
+    <Content Include="App_Data\RadCaptcha\8.wav" />
+    <Content Include="App_Data\RadCaptcha\9.wav" />
+    <Content Include="App_Data\RadCaptcha\A.wav" />
+    <Content Include="App_Data\RadCaptcha\B.wav" />
+    <Content Include="App_Data\RadCaptcha\C.wav" />
+    <Content Include="App_Data\RadCaptcha\D.wav" />
+    <Content Include="App_Data\RadCaptcha\E.wav" />
+    <Content Include="App_Data\RadCaptcha\F.wav" />
+    <Content Include="App_Data\RadCaptcha\G.wav" />
+    <Content Include="App_Data\RadCaptcha\H.wav" />
+    <Content Include="App_Data\RadCaptcha\I.wav" />
+    <Content Include="App_Data\RadCaptcha\J.wav" />
+    <Content Include="App_Data\RadCaptcha\K.wav" />
+    <Content Include="App_Data\RadCaptcha\L.wav" />
+    <Content Include="App_Data\RadCaptcha\M.wav" />
+    <Content Include="App_Data\RadCaptcha\N.wav" />
+    <Content Include="App_Data\RadCaptcha\O.wav" />
+    <Content Include="App_Data\RadCaptcha\P.wav" />
+    <Content Include="App_Data\RadCaptcha\Q.wav" />
+    <Content Include="App_Data\RadCaptcha\R.wav" />
+    <Content Include="App_Data\RadCaptcha\S.wav" />
+    <Content Include="App_Data\RadCaptcha\T.wav" />
+    <Content Include="App_Data\RadCaptcha\U.wav" />
+    <Content Include="App_Data\RadCaptcha\V.wav" />
+    <Content Include="App_Data\RadCaptcha\W.wav" />
+    <Content Include="App_Data\RadCaptcha\X.wav" />
+    <Content Include="App_Data\RadCaptcha\Y.wav" />
+    <Content Include="App_Data\RadCaptcha\Z.wav" />
+    <Content Include="Auth\Login.aspx" />
+    <Content Include="ChangePassword.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Home.aspx" />
+    <Content Include="Themes\assets\settings.html" />
+    <Content Include="Themes\css\backgrounds.css" />
+    <Content Include="Themes\css\bootstrap\bootstrap.min.css" />
+    <Content Include="Themes\css\cleditor\buttons.gif" />
+    <Content Include="Themes\css\cleditor\jquery.cleditor.css" />
+    <Content Include="Themes\css\codemirror\codemirror.css" />
+    <Content Include="Themes\css\codemirror\theme\midnight.css" />
+    <Content Include="Themes\css\fancybox\jquery.fancybox.css" />
+    <Content Include="Themes\css\fonts\fontawesome-webfont.svg" />
+    <Content Include="Themes\css\fonts\materialdesignicons-webfont.svg" />
+    <Content Include="Themes\css\fullcalendar\fullcalendar.css" />
+    <Content Include="Themes\css\icons\font-awesome.min.css" />
+    <Content Include="Themes\css\jquery\jquery-ui.min.css" />
+    <Content Include="Themes\css\mcustomscrollbar\jquery.mCustomScrollbar.css" />
+    <Content Include="Themes\css\mcustomscrollbar\mCSB_buttons.html" />
+    <Content Include="Themes\css\select2\select2.css" />
+    <Content Include="Themes\css\shbrush\shCoreDefault.css" />
+    <Content Include="Themes\css\shbrush\shThemeDefault.css" />
+    <Content Include="Themes\css\stylesheet.css" />
+    <Content Include="Themes\css\stylesheets.css" />
+    <Content Include="Themes\css\themes.css" />
+    <Content Include="Themes\css\validationengine\validationEngine.css" />
+    <Content Include="Themes\img\background\bg_num1.jpg" />
+    <Content Include="Themes\img\background\bg_num2.jpg" />
+    <Content Include="Themes\img\background\bg_num3.jpg" />
+    <Content Include="Themes\img\background\bg_num4.jpg" />
+    <Content Include="Themes\img\background\blight.png" />
+    <Content Include="Themes\img\background\blight_ltr.png" />
+    <Content Include="Themes\img\background\blight_rtl.png" />
+    <Content Include="Themes\img\background\bt_cubs.png" />
+    <Content Include="Themes\img\background\bt_cubs_a.png" />
+    <Content Include="Themes\img\background\light.png" />
+    <Content Include="Themes\img\background\light_ltr.png" />
+    <Content Include="Themes\img\background\light_rtl.png" />
+    <Content Include="Themes\img\background\splash_blue.png" />
+    <Content Include="Themes\img\background\splash_white.png" />
+    <Content Include="Themes\img\background\wlight.png" />
+    <Content Include="Themes\img\background\wlight_ltr.png" />
+    <Content Include="Themes\img\background\wlight_rtl.png" />
+    <Content Include="Themes\img\example\example_150x115.jpg" />
+    <Content Include="Themes\img\example\example_500x380.jpg" />
+    <Content Include="Themes\img\example\photo\img_2.jpg" />
+    <Content Include="Themes\img\example\photo\img_2s.jpg" />
+    <Content Include="Themes\img\example\photo\img_3.jpg" />
+    <Content Include="Themes\img\example\photo\img_3s.jpg" />
+    <Content Include="Themes\img\example\photo\img_4.jpg" />
+    <Content Include="Themes\img\example\photo\img_4s.jpg" />
+    <Content Include="Themes\img\example\user\alexey.jpg" />
+    <Content Include="Themes\img\example\user\alexey_s.jpg" />
+    <Content Include="Themes\img\example\user\dmitry.jpg" />
+    <Content Include="Themes\img\example\user\dmitry_b.jpg" />
+    <Content Include="Themes\img\example\user\dmitry_s.jpg" />
+    <Content Include="Themes\img\example\user\helen.jpg" />
+    <Content Include="Themes\img\example\user\helen_s.jpg" />
+    <Content Include="Themes\img\example\user\olga.jpg" />
+    <Content Include="Themes\img\example\user\olga_s.jpg" />
+    <Content Include="Themes\img\example\user_bg.jpg" />
+    <Content Include="Themes\img\fancybox\blank.gif" />
+    <Content Include="Themes\img\fancybox\fancybox_loading.gif" />
+    <Content Include="Themes\img\fancybox\fancybox_overlay.png" />
+    <Content Include="Themes\img\fancybox\fancybox_sprite.png" />
+    <Content Include="Themes\img\jqueryui\animated-overlay.gif" />
+    <Content Include="Themes\img\jqueryui\ui-bg_diagonals-thick_18_b81900_5F40x40.png" />
+    <Content Include="Themes\img\jqueryui\ui-bg_diagonals-thick_20_666666_5F40x40.png" />
+    <Content Include="Themes\img\jqueryui\ui-bg_flat_10_000000_5F40x100.png" />
+    <Content Include="Themes\img\jqueryui\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Themes\img\jqueryui\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Themes\img\jqueryui\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Themes\img\jqueryui\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Themes\img\jqueryui\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Themes\img\jqueryui\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Themes\img\jqueryui\ui-icons_222222_5F256x240.png" />
+    <Content Include="Themes\img\jqueryui\ui-icons_228ef1_5F256x240.png" />
+    <Content Include="Themes\img\jqueryui\ui-icons_ef8c08_5F256x240.png" />
+    <Content Include="Themes\img\jqueryui\ui-icons_ffd27a_5F256x240.png" />
+    <Content Include="Themes\img\jqueryui\ui-icons_ffffff_5F256x240.png" />
+    <Content Include="Themes\img\loader.gif" />
+    <Content Include="Themes\img\logo.png" />
+    <Content Include="Themes\img\logob.png" />
+    <Content Include="Themes\img\select2\select2-spinner.gif" />
+    <Content Include="Themes\img\select2\select2.png" />
+    <Content Include="Themes\img\select2\select2x2.png" />
+    <Content Include="Themes\img\user.jpg" />
+    <Content Include="Themes\img\wallpapers\wall_num1.jpg" />
+    <Content Include="Themes\img\wallpapers\wall_num10.jpg" />
+    <Content Include="Themes\img\wallpapers\wall_num11.jpg" />
+    <Content Include="Themes\img\wallpapers\wall_num12.jpg" />
+    <Content Include="Themes\img\wallpapers\wall_num13.jpg" />
+    <Content Include="Themes\img\wallpapers\wall_num14.jpg" />
+    <Content Include="Themes\img\wallpapers\wall_num15.jpg" />
+    <Content Include="Themes\img\wallpapers\wall_num16.jpg" />
+    <Content Include="Themes\img\wallpapers\wall_num2.jpg" />
+    <Content Include="Themes\img\wallpapers\wall_num3.jpg" />
+    <Content Include="Themes\img\wallpapers\wall_num4.jpg" />
+    <Content Include="Themes\img\wallpapers\wall_num5.jpg" />
+    <Content Include="Themes\img\wallpapers\wall_num6.jpg" />
+    <Content Include="Themes\img\wallpapers\wall_num7.jpg" />
+    <Content Include="Themes\img\wallpapers\wall_num8.jpg" />
+    <Content Include="Themes\img\wallpapers\wall_num9.jpg" />
+    <Content Include="Themes\js\js.js" />
+    <Content Include="Themes\js\plugins\bootstrap\bootstrap.min.js" />
+    <Content Include="Themes\js\plugins\cleditor\jquery.cleditor.min.js" />
+    <Content Include="Themes\js\plugins\codemirror\addon\edit\matchbrackets.js" />
+    <Content Include="Themes\js\plugins\codemirror\codemirror.js" />
+    <Content Include="Themes\js\plugins\codemirror\mode\clike\clike.js" />
+    <Content Include="Themes\js\plugins\codemirror\mode\css\css.js" />
+    <Content Include="Themes\js\plugins\codemirror\mode\htmlmixed\htmlmixed.js" />
+    <Content Include="Themes\js\plugins\codemirror\mode\javascript\javascript.js" />
+    <Content Include="Themes\js\plugins\codemirror\mode\php\php.js" />
+    <Content Include="Themes\js\plugins\codemirror\mode\xml\xml.js" />
+    <Content Include="Themes\js\plugins\datatables\jquery.dataTables.min.js" />
+    <Content Include="Themes\js\plugins\fancybox\jquery.fancybox.pack.js" />
+    <Content Include="Themes\js\plugins\flot\jquery.flot.js" />
+    <Content Include="Themes\js\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="Themes\js\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="Themes\js\plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Themes\js\plugins\ibutton\jquery.ibutton.js" />
+    <Content Include="Themes\js\plugins\jquery\globalize.js" />
+    <Content Include="Themes\js\plugins\jquery\jquery-migrate.min.js" />
+    <Content Include="Themes\js\plugins\jquery\jquery-ui-timepicker-addon.js" />
+    <Content Include="Themes\js\plugins\jquery\jquery-ui.min.js" />
+    <Content Include="Themes\js\plugins\jquery\jquery.min.js" />
+    <Content Include="Themes\js\plugins\knob\jquery.knob.js" />
+    <Content Include="Themes\js\plugins\maskedinput\jquery.maskedinput.min.js" />
+    <Content Include="Themes\js\plugins\mcustomscrollbar\jquery.mCustomScrollbar.min.js" />
+    <Content Include="Themes\js\plugins\noty\jquery.noty.js" />
+    <Content Include="Themes\js\plugins\noty\layouts\topCenter.js" />
+    <Content Include="Themes\js\plugins\noty\layouts\topLeft.js" />
+    <Content Include="Themes\js\plugins\noty\layouts\topRight.js" />
+    <Content Include="Themes\js\plugins\noty\themes\default.js" />
+    <Content Include="Themes\js\plugins\plupload\jquery.plupload.queue\css\jquery.plupload.queue.css" />
+    <Content Include="Themes\js\plugins\plupload\jquery.plupload.queue\img\backgrounds.gif" />
+    <Content Include="Themes\js\plugins\plupload\jquery.plupload.queue\img\buttons-disabled.png" />
+    <Content Include="Themes\js\plugins\plupload\jquery.plupload.queue\img\buttons.png" />
+    <Content Include="Themes\js\plugins\plupload\jquery.plupload.queue\img\delete.png" />
+    <Content Include="Themes\js\plugins\plupload\jquery.plupload.queue\img\done.png" />
+    <Content Include="Themes\js\plugins\plupload\jquery.plupload.queue\img\error.png" />
+    <Content Include="Themes\js\plugins\plupload\jquery.plupload.queue\img\transp50.png" />
+    <Content Include="Themes\js\plugins\plupload\jquery.plupload.queue\jquery.plupload.queue.min.js" />
+    <Content Include="Themes\js\plugins\plupload\plupload.full.min.js" />
+    <Content Include="Themes\js\plugins\select2\select2.min.js" />
+    <Content Include="Themes\js\plugins\shbrush\shBrushCss.js" />
+    <Content Include="Themes\js\plugins\shbrush\shBrushJScript.js" />
+    <Content Include="Themes\js\plugins\shbrush\shBrushXml.js" />
+    <Content Include="Themes\js\plugins\shbrush\shCore.js" />
+    <Content Include="Themes\js\plugins\shbrush\XRegExp.js" />
+    <Content Include="Themes\js\plugins\sparkline\jquery.sparkline.min.js" />
+    <Content Include="Themes\js\plugins\stepy\jquery.stepy.min.js" />
+    <Content Include="Themes\js\plugins\tagsinput\jquery.tagsinput.min.js" />
+    <Content Include="Themes\js\plugins\uniform\jquery.uniform.min.js" />
+    <Content Include="Themes\js\plugins\validationengine\jquery.validationEngine.js" />
+    <Content Include="Themes\js\plugins\validationengine\languages\jquery.validationEngine-en.js" />
+    <Content Include="Themes\js\settings.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\RadSpell\de-DE.tdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\RadSpell\en-US.tdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\RadSpell\fr-FR.tdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Themes\css\fonts\dripicons-v2.ttf" />
+    <Content Include="Themes\css\fonts\dripicons-v2.woff" />
+    <Content Include="Themes\css\fonts\fontawesome-webfont.eot" />
+    <Content Include="Themes\css\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Themes\css\fonts\fontawesome-webfont.woff" />
+    <Content Include="Themes\css\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Themes\css\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Themes\css\fonts\fontawesome-webfontf77b.eot" />
+    <Content Include="Themes\css\fonts\fontawesome-webfontf77b.ttf" />
+    <Content Include="Themes\css\fonts\fontawesome-webfontf77b.woff" />
+    <Content Include="Themes\css\fonts\FontAwesome.otf" />
+    <Content Include="Themes\css\fonts\materialdesignicons-webfont.eot" />
+    <Content Include="Themes\css\fonts\materialdesignicons-webfont.ttf" />
+    <Content Include="Themes\css\fonts\materialdesignicons-webfont.woff" />
+    <Content Include="Themes\css\fonts\materialdesignicons-webfont.woff2" />
+    <Content Include="Themes\img\background\Descr.WD3" />
+    <Content Include="Themes\img\Descr.WD3" />
+    <Content Include="Themes\img\example\Descr.WD3" />
+    <Content Include="Themes\img\example\photo\Descr.WD3" />
+    <Content Include="Themes\img\example\user\Descr.WD3" />
+    <Content Include="Themes\img\fancybox\Descr.WD3" />
+    <Content Include="Themes\img\jqueryui\Descr.WD3" />
+    <Content Include="Themes\img\select2\Descr.WD3" />
+    <Content Include="Themes\img\wallpapers\Descr.WD3" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <Content Include="Web.Master" />
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Repository\Repository.csproj">
+      <Project>{6eed9b7d-f412-492a-a1b8-bfb08c3be1da}</Project>
+      <Name>Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Import Project="$(VSToolsPath)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(VSToolsPath)\TypeScript\Microsoft.TypeScript.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49573</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:59534/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <UserProperties UseAjaxifiedTemplates="True" UseJQuerySupport="True" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

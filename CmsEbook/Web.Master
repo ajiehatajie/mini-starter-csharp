@@ -1,0 +1,91 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Web.master.cs" Inherits="CmsEbook.Web" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>::CRM DASHBOARD::</title>
+     <meta http-equiv=Content-Type content="text/html; charset=utf-8" />
+    <link href="Themes/css/stylesheets.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="Themes/js/plugins/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="Themes/js/plugins/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="Themes/js/plugins/jquery/jquery-migrate.min.js"></script>
+    <script type="text/javascript" src="Themes/js/plugins/jquery/globalize.js"></script>
+    <script type="text/javascript" src="Themes/js/plugins/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Themes/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+    <script type="text/javascript" src="Themes/js/plugins/uniform/jquery.uniform.min.js"></script>
+    <script type="text/javascript" src="Themes/js/plugins/knob/jquery.knob.js"></script>
+    <script type="text/javascript" src="Themes/js/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script type="text/javascript" src="Themes/js/plugins/flot/jquery.flot.js"></script>
+    <script type="text/javascript" src="Themes/js/plugins/flot/jquery.flot.resize.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="bg-img-num1">
+    <div class="container">
+         <form id="form1" runat="server">
+                      <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
+                        <Scripts>
+                            <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js" />
+                            <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQuery.js" />
+                            <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQueryInclude.js" />
+                        </Scripts>
+                    </telerik:RadScriptManager>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                          <nav class="navbar brb" role="navigation">
+                            <div class="navbar-header">
+                              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-reorder"></span> </button>
+                              <a class=navbar-brand href="Default.aspx"> </a></div>
+                            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                              <ul class="nav navbar-nav">
+                                <li class="active"> <a href="Home"> <span class="icon-home"></span> dashboard </a> </li>
+                                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="icon-cogs"></span> Master</a>
+                                  <ul class="dropdown-menu">
+                                    <li><a href="Employee.aspx">Employee</a></li>
+                                    <li><a href="AddAbsen.aspx">Form </a></li>
+                                  </ul>
+                                </li>
+                                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="icon-file-alt"></span> Report</a>
+                                  <ul class="dropdown-menu">
+                                    <li><a href="ReportToday.aspx">Report Today</a></li>
+                                    <li><a href="NotAbsenToday.aspx">Report Not Absen Today</a></li>
+                                    <li><a href="ReportDaily.aspx">Report Daily</a></li>
+                                    <li><a href="ReportSummary.aspx">Report Summary</a></li>
+                                  
+                                    <li><a href="ReportInOut.aspx">Report IN & OUT</a></li>
+                                    <li><a href="ReportChartMonthly.aspx">Report Chart Monthly</a></li>
+                                  </ul>
+                                </li>
+                                   <li class="active"> 
+                                       <asp:LinkButton runat="server" OnClick="lnlLogout_Click" ID="lnlLogout">
+                                            <span class="icon-user"></span> Logout
+                                       </asp:LinkButton>
+                                     
+
+                                   </li>
+                              </ul>
+         
+                            </div>
+                          </nav>
+                        </div>
+                      </div>
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            
+                    </asp:ContentPlaceHolder>
+    
+            
+         </form>
+    
+         <div class=row>
+            <div class=page-footer>
+              <div class=page-footer-wrap>
+                <div class="side pull-left"> Copyright &COPY; Dept IT Bintang 2019. All rights reserved. </div>
+              </div>
+            </div>
+         </div>
+
+    </div>
+</body>
+</html>
